@@ -1,0 +1,75 @@
+<div class="box" *ngIf="!submitted">
+	<form class="form" (ngSubmit)="onSubmit()" #diagnosisForm="ngForm">
+	  <div id="step-1">
+	  	<h2>Welcome to your Hair Diagnosis</h2>
+	  	<div class="selection">
+	  		<div>
+	  		  <input type="text" id="name" 
+	  		  		 
+	  		  		 [(ngModel)]="model.name" name="name" placeholder="Enter your name"
+	  		  		 [required]='model.name'>
+	        </div>
+	        <div>
+	          <button class="btn btn-dark" type="button" (click)="secondStep()">Next</button>
+	        </div>
+	  	</div>
+	  </div>
+
+	  <div id="step-2" *ngIf="step2">
+	  	<h2>What kind of hair do you have?</h2>
+	  	<div class="selection">
+	  		<label for=types>Please Select your choice</label>
+		    <select id="types" 
+		    		
+		    		[(ngModel)]="model.types" name="types"
+		    		[required]='!model.name'>
+		    	<option *ngFor="let type of hairTypes" [value]="type">{{type}}</option>
+	        </select>
+	        <label for="is">And</label>
+	        <select id="is" 
+	        		
+	        		[(ngModel)]="model.is" name="is">
+		    	<option *ngFor="let is of hairIs" [value]="is">{{is}}</option>
+	        </select>
+		    <button class="btn btn-dark" type="button" (click)="thirdStep()">Next</button>
+		</div> 
+	  </div>
+
+	  <div id="step-3" *ngIf="step3">
+	  	<h2>What are your hair conditions?</h2>
+	  	<div class="selection">
+	  		<label for="condition">Please Select your choice</label>
+		  	<select id="condition" 
+		  			
+		  			[(ngModel)]="model.condition" name="condition">
+		    	<option *ngFor="let condition of hairConditions" [value]="condition">{{condition}}</option>
+	        </select>
+		    <button class="btn btn-dark" type="button" (click)="fourthStep()">Next</button>
+		</div>
+	  </div>
+
+        <div id="step-4" *ngIf="step4">
+	  	  <h2>What are your wishes?</h2>
+		  	<div class="selection">
+		  		<label for="wish">Please Select your choice</label>
+			  	<select id="wish" 
+			  			required 
+			  			[(ngModel)]="model.wish" name="wish">
+			    	<option *ngFor="let wish of hairWishes" [value]="wish">{{wish}}</option>
+		        </select>		
+			</div><button class="btn btn-dark" type="submit" value="Add">Add</button>
+	    </div>
+
+	</form>
+	
+</div>
+<div *ngIf="submitted" id="result" class="container">
+	<h2>Hi {{model.name}}, these are your results</h2>
+	<div class="row">
+	<div class="col-md-6"><img src={{result[1]}}></div>
+	<div class="col-md-6">
+		<p>{{result[0]}}</p>
+		<p (click)="goBack()" id="back"><i class="fas fa-backward"></i>  Go Back</p>
+	</div>
+	</div>
+</div>

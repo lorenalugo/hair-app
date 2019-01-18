@@ -1,0 +1,13 @@
+.nav-item {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+nav {
+	margin: 0;
+	width: 100%;
+}
+
+ul li {
+	cursor: pointer;
+}

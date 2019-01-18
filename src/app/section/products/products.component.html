@@ -1,0 +1,9 @@
+<div class="text-center" *ngFor="let category of productService.id">
+  <h4>{{category}}</h4> 
+  <div class="flex">
+    <div *ngFor="let article of productService.products[category]" routerLink="/products/detail">
+        <img src="{{article.image}}">
+        <p>{{article.key}}</p>
+    </div>
+  </div>
+</div>

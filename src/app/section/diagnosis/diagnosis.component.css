@@ -1,0 +1,85 @@
+.box {
+	width: 100%;
+	height: auto;
+	text-align: center;
+	background: url('/../../assets/hairsalon.jpeg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-top: 8%;
+	padding-bottom: 8%;
+}
+
+.form {
+	display: block;
+	background-color: rgba(112, 112, 112, 0.57);
+	width: 60%;
+	height: 80%;
+	padding-top: 6%;
+	padding-bottom: 6%;
+	margin: auto;
+
+}
+
+.box h2 {
+	font-weight: 500;
+	padding: 1.5rem;
+	color: #fff;
+}
+
+.selection {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.selection button {
+	margin-left: 20px;
+}
+
+.form label {
+	margin: auto 10px;
+	color: #fff;
+	font-weight: 300;
+}
+
+select {
+    box-shadow: 0 0 0 .2rem rgba(52,58,64,.5);
+    background-color: rgba(255,255,255,1);
+}
+
+#result {
+	width: 100%;
+	height: auto;
+	margin: auto;
+	padding: 30px;
+	background-color: #424242;
+	color: #fff;
+	text-align: center;
+}
+
+#result img {
+	height: 300px;
+	width: auto;
+}
+
+#result p, h2 {
+	margin-bottom: 30px;
+}
+
+#back:hover {
+	cursor: pointer;
+	color: #F7FE2E;
+}
+
+@media screen and (max-width: 1024px) {
+	.form {
+		width: 70%;
+	}
+	.selection {
+		flex-direction: column;
+	}
+	.selection div, .selection label, .selection select{
+		margin-bottom: 20px;
+	}
+}

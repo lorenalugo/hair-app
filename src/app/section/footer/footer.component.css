@@ -1,0 +1,23 @@
+footer i {
+	padding-right: 20px;
+	font-size: 1.5em;
+}
+
+footer {
+	background-color: #000000;
+	color: #ffffff;
+	padding: 30px;
+	left: 0;
+	right: 0;
+	height: auto;
+}
+
+.row {
+	margin: 0;
+}
+
+.copyright {
+	font-size: 18px;
+	font-family: times new roman;
+	padding-top: 15px;
+}
